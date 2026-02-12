@@ -1,0 +1,1306 @@
+```html
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Wispr - Your AI Copilot for Sales Calls</title>
+    <meta name="description" content="Real-time AI assistant that provides contextual help during interviews, sales calls, presentations, and more. Get the perfect words to say, exactly when you need them."/>
+    <meta name="author" content="Wispr"/>
+    <meta name="keywords" content="AI assistant,video calls,interview help,sales assistant,real-time AI,meeting assistant"/>
+    <meta name="robots" content="index, follow"/>
+    <meta property="og:title" content="Wispr - Your AI Copilot for Sales Calls"/>
+    <meta property="og:description" content="Real-time AI assistant that provides contextual help during interviews, sales calls, presentations, and more."/>
+    <meta property="og:url" content="https://wispr.com"/>
+    <meta property="og:site_name" content="Wispr"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:image" content="https://wispr.vercel.app/og-image.png"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:type" content="website"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Wispr - Your AI Copilot for Sales Calls"/>
+    <meta name="twitter:description" content="Real-time AI assistant for interviews, sales calls, and presentations."/>
+    <meta name="twitter:image" content="https://wispr.vercel.app/og-image.png"/>
+    <link rel="icon" href="logo.png"/>
+    <link rel="apple-touch-icon" href="logo.png"/>
+
+    <style>
+        /* Base styles & Variables */
+        :root {
+            --background: #ffffff;
+            --background-rgb: 255, 255, 255;
+            --text-primary: #1F2937; /* Dark Gray */
+            --text-secondary: #4B5563; /* Medium Gray */
+            --text-tertiary: #6B7280; /* Light Gray */
+            --border-color: #E5E7EB; /* Light border */
+            --card-background: #F9FAFB; /* Off-white */
+            --button-primary-bg: linear-gradient(to right, #6D28D9, #DB2777); /* Violet to Pink */
+            --button-primary-hover-bg: linear-gradient(to right, #5B21B6, #C02646);
+            --button-secondary-bg: #E5E7EB;
+            --button-secondary-text: #1F2937;
+            --button-secondary-hover-bg: #D1D5DB;
+            --primary-color: #6D28D9; /* Violet-700 */
+            --primary-color-rgb: 109, 40, 217;
+            --secondary-color: #DB2777; /* Pink-600 */
+            --emerald-color: #10B981; /* Emerald-500 */
+            --emerald-color-rgb: 16, 185, 129;
+            --purple-color: #A855F7; /* Purple-500 */
+            --purple-color-rgb: 168, 85, 247;
+            --blue-color: #3B82F6; /* Blue-500 */
+            --cyan-color: #06B6D4; /* Cyan-500 */
+            --red-color: #EF4444; /* Red-500 */
+            --rose-color: #F43F5E; /* Rose-500 */
+            --orange-color: #F97316; /* Orange-500 */
+            --amber-color: #F59E0B; /* Amber-500 */
+            --amber-color-rgb: 245, 158, 11;
+            --indigo-color: #6366F1; /* Indigo-500 */
+            --violet-color: #8B5CF6; /* Violet-500 */
+            --gradient-text-color: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            --hero-bg-from: #F0F4F8;
+            --hero-bg-via: #E0E7EF;
+            --hero-bg-to: #E0E7EF;
+            --feature-card-bg: #F9FAFB;
+            --feature-card-border: #E0E7EF;
+            --footer-border: #E0E7EF;
+            --pricing-card-bg: #F9FAFB;
+            --pricing-card-border: #E0E7EF;
+            --timeline-line-color: #D1D5DB;
+            --download-bg-from: #E0E7EF;
+            --download-bg-via: #F0F4F8;
+            --download-bg-to: #E0E7EF;
+            --hero-feature-text: #4B5563; /* slate-700 */
+            --hero-feature-text-bold: #1F2937; /* slate-900 */
+            --shadow-primary-500-25: 0 10px 15px -3px rgba(var(--primary-color-rgb), 0.25), 0 4px 6px -2px rgba(var(--primary-color-rgb), 0.05);
+            --shadow-primary-500-30: 0 25px 50px -12px rgba(var(--primary-color-rgb), 0.3);
+            --shadow-primary-500-40: 0 10px 15px -3px rgba(var(--primary-color-rgb), 0.4), 0 4px 6px -2px rgba(var(--primary-color-rgb), 0.1);
+            --shadow-primary-500-50: 0 25px 50px -12px rgba(var(--primary-color-rgb), 0.5);
+            --shadow-emerald-500-30: 0 25px 50px -12px rgba(var(--emerald-color-rgb), 0.3);
+        }
+
+        html[data-theme="dark"] {
+            --background: #0F172A; /* slate-950 */
+            --background-rgb: 15, 23, 42;
+            --text-primary: #E2E8F0; /* slate-200 */
+            --text-secondary: #CBD5E1; /* slate-300 */
+            --text-tertiary: #94A3B8; /* slate-400 */
+            --border-color: #334155; /* slate-700 */
+            --card-background: #1E293B; /* slate-800 */
+            --button-primary-bg: linear-gradient(to right, #8B5CF6, #EC4899); /* Violet to Pink */
+            --button-primary-hover-bg: linear-gradient(to right, #7C3AED, #DB2777);
+            --button-secondary-bg: #334155; /* slate-700 */
+            --button-secondary-text: #E2E8F0;
+            --button-secondary-hover-bg: #475569; /* slate-600 */
+            --primary-color: #8B5CF6; /* Violet-500 */
+            --primary-color-rgb: 139, 92, 246;
+            --secondary-color: #EC4899; /* Pink-500 */
+            --emerald-color: #34D399; /* Emerald-400 */
+            --purple-color: #A855F7; /* Purple-500 */
+            --blue-color: #60A5FA; /* Blue-400 */
+            --cyan-color: #22D3EE; /* Cyan-400 */
+            --red-color: #F87171; /* Red-400 */
+            --rose-color: #FB7185; /* Rose-400 */
+            --orange-color: #FBBF24; /* Amber-400 */
+            --amber-color: #FCD34D; /* Amber-300 */
+            --indigo-color: #818CF8; /* Indigo-400 */
+            --violet-color: #A78BFA; /* Violet-400 */
+            --gradient-text-color: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            --hero-bg-from: #0F172A;
+            --hero-bg-via: #1E293B;
+            --hero-bg-to: #0F172A;
+            --feature-card-bg: rgba(255, 255, 255, 0.05);
+            --feature-card-border: rgba(255, 255, 255, 0.1);
+            --footer-border: rgba(255, 255, 255, 0.1);
+            --pricing-card-bg: rgba(255, 255, 255, 0.05);
+            --pricing-card-border: rgba(255, 255, 255, 0.1);
+            --timeline-line-color: rgba(255, 255, 255, 0.1);
+            --download-bg-from: #0F172A;
+            --download-bg-via: #1E293B;
+            --download-bg-to: #0F172A;
+            --hero-feature-text: #94A3B8; /* slate-400 */
+            --hero-feature-text-bold: #E2E8F0; /* slate-200 */
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        /* Utility Classes (Simplified Tailwind-like) */
+        .max-w-7xl { max-width: 80rem; }
+        .max-w-6xl { max-width: 72rem; }
+        .max-w-4xl { max-width: 56rem; }
+        .max-w-3xl { max-width: 48rem; }
+        .max-w-2xl { max-width: 42rem; }
+        .max-w-md { max-width: 28rem; }
+
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+        .py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+        .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+        .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+        .pt-32 { padding-top: 8rem; }
+        .pb-4 { padding-bottom: 1rem; }
+        .pb-10 { padding-bottom: 2.5rem; }
+
+        .flex { display: flex; }
+        .inline-flex { display: inline-flex; }
+        .flex-col { flex-direction: column; }
+        .flex-row { flex-direction: row; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .justify-between { justify-content: space-between; }
+        .flex-wrap { flex-wrap: wrap; }
+        .flex-grow { flex-grow: 1; }
+        .flex-shrink-0 { flex-shrink: 0; }
+        .gap-1 { gap: 0.25rem; }
+        .gap-2 { gap: 0.5rem; }
+        .gap-3 { gap: 0.75rem; }
+        .gap-4 { gap: 1rem; }
+        .gap-6 { gap: 1.5rem; }
+        .gap-8 { gap: 2rem; }
+        .gap-10 { gap: 2.5rem; }
+        .mb-1 { margin-bottom: 0.25rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-10 { margin-bottom: 2.5rem; }
+        .mt-1 { margin-top: 0.25rem; }
+        .mt-6 { margin-top: 1.5rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mt-12 { margin-top: 3rem; }
+        .ml-1 { margin-left: 0.25rem; }
+        .ml-2 { margin-left: 0.5rem; }
+        .mr-1 { margin-right: 0.25rem; }
+        .mr-2 { margin-right: 0.5rem; }
+        .space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.75rem; }
+        .space-y-12 > :not([hidden]) ~ :not([hidden]) { margin-top: 3rem; }
+        .space-y-24 > :not([hidden]) ~ :not([hidden]) { margin-top: 6rem; }
+
+        .grid { display: grid; }
+        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .fixed { position: fixed; }
+        .sticky { position: sticky; }
+        .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+        .top-0 { top: 0; }
+        .left-0 { left: 0; }
+        .right-0 { right: 0; }
+        .bottom-0 { bottom: 0; }
+        .top-1\/4 { top: 25%; }
+        .top-1\/2 { top: 50%; }
+        .bottom-1\/4 { bottom: 25%; }
+        .left-1\/4 { left: 25%; }
+        .right-1\/4 { right: 25%; }
+        .-translate-x-1\/2 { transform: translateX(-50%); }
+        .-translate-y-1\/2 { transform: translateY(-50%); }
+        .-top-3 { top: -0.75rem; }
+        .-mt-4 { margin-top: -1rem; }
+        .-bottom-14 { bottom: -3.5rem; }
+
+        .z-10 { z-index: 10; }
+        .z-50 { z-index: 50; }
+
+        .h-8 { height: 2rem; }
+        .h-10 { height: 2.5rem; }
+        .h-14 { height: 3.5rem; }
+        .h-16 { height: 4rem; }
+        .h-96 { height: 24rem; }
+        .h-screen { height: 100vh; }
+        .h-\[150vh\] { height: 150vh; }
+        .w-full { width: 100%; }
+        .w-8 { width: 2rem; }
+        .w-10 { width: 2.5rem; }
+        .w-14 { width: 3.5rem; }
+        .w-80 { width: 20rem; } /* Added for hero blobs */
+        .w-96 { width: 24rem; }
+        .w-\[3px\] { width: 3px; }
+        .w-\[600px\] { width: 600px; }
+        .w-\[500px\] { width: 500px; }
+        .w-px { width: 1px; }
+
+        .rounded-full { border-radius: 9999px; }
+        .rounded-xl { border-radius: 0.75rem; }
+        .rounded-2xl { border-radius: 1rem; }
+        .rounded-lg { border-radius: 0.5rem; }
+
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .text-left { text-align: left; }
+        .text-balance { text-wrap: balance; }
+
+        .text-xs { font-size: 0.75rem; }
+        .text-sm { font-size: 0.875rem; }
+        .text-base { font-size: 1rem; }
+        .text-lg { font-size: 1.125rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-3xl { font-size: 1.875rem; }
+        .text-4xl { font-size: 2.25rem; }
+        .text-5xl { font-size: 3rem; }
+        .text-6xl { font-size: 3.75rem; }
+        .text-7xl { font-size: 4.5rem; }
+
+        .font-light { font-weight: 300; }
+        .font-medium { font-weight: 500; }
+        .font-semibold { font-weight: 600; }
+        .font-bold { font-weight: 700; }
+        .tracking-tight { letter-spacing: -0.025em; }
+
+        .text-white { color: white; }
+        .text-primary { color: var(--text-primary); } /* For Wispr logo text, follows theme */
+        .text-primary-300 { color: var(--primary-color); } /* Using primary color for a lighter shade */
+        .text-primary-400 { color: var(--primary-color); }
+        .text-primary-500 { color: var(--primary-color); }
+        .text-emerald-300 { color: var(--emerald-color); }
+        .text-emerald-400 { color: var(--emerald-color); }
+        .text-purple-400 { color: var(--purple-color); }
+        .text-slate-300 { color: var(--text-secondary); }
+        .text-slate-400 { color: var(--text-tertiary); }
+        .text-slate-500 { color: var(--text-tertiary); }
+        .text-white\/10 { color: rgba(255, 255, 255, 0.1); }
+        .text-amber-400 { color: var(--amber-color); }
+
+        /* Backgrounds */
+        .bg-transparent { background-color: transparent; }
+        .bg-slate-950 { background-color: var(--background); }
+        .bg-slate-900 { background-color: #1E293B; } /* specific for hero image container */
+        .bg-slate-900\/50 { background-color: rgba(30, 41, 59, 0.5); } /* specific for profile section */
+        .bg-white\/5 { background-color: var(--card-background); }
+        .bg-white\/10 { background-color: var(--card-background); }
+        .bg-primary-500\/20 { background-color: rgba(var(--primary-color-rgb), 0.2); }
+        .bg-primary-500\/30 { background-color: rgba(var(--primary-color-rgb), 0.3); }
+        .bg-primary-500\/90 { background-color: rgba(var(--primary-color-rgb), 0.9); }
+        .bg-emerald-500\/10 { background-color: rgba(var(--emerald-color-rgb), 0.1); }
+        .bg-emerald-500\/20 { background-color: rgba(var(--emerald-color-rgb), 0.2); }
+        .bg-emerald-500\/90 { background-color: rgba(var(--emerald-color-rgb), 0.9); }
+        .bg-purple-500\/10 { background-color: rgba(var(--purple-color-rgb), 0.1); }
+        .bg-purple-500\/15 { background-color: rgba(var(--purple-color-rgb), 0.15); }
+        .bg-purple-500\/20 { background-color: rgba(var(--purple-color-rgb), 0.2); }
+        .bg-amber-500\/20 { background-color: rgba(var(--amber-color-rgb), 0.2); }
+
+        .bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-from, transparent), var(--tw-gradient-to, transparent)); }
+        .from-primary-500 { --tw-gradient-from: var(--primary-color); }
+        .to-purple-500 { --tw-gradient-to: var(--purple-color); }
+        .to-pink-500 { --tw-gradient-to: var(--secondary-color); }
+        .from-emerald-500 { --tw-gradient-from: var(--emerald-color); }
+        .to-green-500 { --tw-gradient-to: #22C55E; } /* Green-500 */
+        .from-red-500 { --tw-gradient-from: var(--red-color); }
+        .to-rose-500 { --tw-gradient-to: var(--rose-color); }
+        .from-orange-500 { --tw-gradient-from: var(--orange-color); }
+        .to-amber-500 { --tw-gradient-to: var(--amber-color); }
+        .from-blue-500 { --tw-gradient-from: var(--blue-color); }
+        .to-cyan-500 { --tw-gradient-to: var(--cyan-color); }
+        .from-indigo-500 { --tw-gradient-from: var(--indigo-color); }
+        .to-violet-500 { --tw-gradient-to: var(--violet-color); }
+
+        .bg-gradient-to-b { background-image: linear-gradient(to bottom, var(--tw-gradient-from, transparent), var(--tw-gradient-to, transparent)); }
+        .from-primary-950 { --tw-gradient-from: var(--hero-bg-from); }
+        .via-slate-950 { --tw-gradient-via: var(--hero-bg-via); }
+        .to-slate-950 { --tw-gradient-to: var(--hero-bg-to); }
+        .via-primary-950\/30 { --tw-gradient-via: rgba(var(--primary-color-rgb), 0.3); }
+        .via-primary-950\/50 { --tw-gradient-via: rgba(var(--primary-color-rgb), 0.5); }
+
+        /* Borders */
+        .border { border-width: 1px; border-style: solid; }
+        .border-white\/5 { border-color: var(--footer-border); }
+        .border-white\/10 { border-color: var(--border-color); }
+        .border-white\/20 { border-color: var(--border-color); }
+        .border-primary-400\/30 { border-color: rgba(var(--primary-color-rgb), 0.3); }
+        .border-primary-500\/30 { border-color: rgba(var(--primary-color-rgb), 0.3); }
+        .border-primary-500\/50 { border-color: rgba(var(--primary-color-rgb), 0.5); }
+        .border-emerald-500\/30 { border-color: rgba(var(--emerald-color-rgb), 0.3); }
+        .border-amber-500\/30 { border-color: rgba(var(--amber-color-rgb), 0.3); }
+        .border-2 { border-width: 2px; }
+        .border-t { border-top-width: 1px; }
+        .ring-2 { box-shadow: 0 0 0 2px; }
+        .ring-primary-500\/20 { box-shadow: 0 0 0 4px rgba(var(--primary-color-rgb), 0.2); }
+        .ring-emerald-500\/50 { box-shadow: 0 0 0 2px rgba(var(--emerald-color-rgb), 0.5); }
+
+        /* Shadows */
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+        .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+
+        /* Other */
+        .overflow-hidden { overflow: hidden; }
+        .backdrop-blur-sm { backdrop-filter: blur(4px); }
+        .whitespace-nowrap { white-space: nowrap; }
+        .group:hover .group-hover\:translate-x-1 { transform: translateX(0.25rem); }
+        .group:hover .group-hover\:scale-110 { transform: scale(1.1); }
+        .disabled\:opacity-50:disabled { opacity: 0.5; }
+        .disabled\:cursor-not-allowed:disabled { cursor: not-allowed; }
+        .blur-3xl { filter: blur(48px); }
+
+        /* Custom Components/Styles */
+        .header {
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .header-scrolled {
+            background-color: rgba(var(--background-rgb), 0.9);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-link {
+            color: var(--text-tertiary);
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+
+        .btn-primary {
+            background: var(--button-primary-bg);
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-primary-500-25);
+        }
+        .btn-primary:hover {
+            background: var(--button-primary-hover-bg);
+            box-shadow: var(--shadow-primary-500-40);
+        }
+        .btn-primary.px-4.py-2 { /* Specific smaller button in header */
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+
+
+        .btn-secondary {
+            background-color: var(--button-secondary-bg);
+            color: var(--button-secondary-text);
+            border: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .btn-secondary:hover {
+            background-color: var(--button-secondary-hover-bg);
+        }
+        .btn-secondary.text-base {
+            padding: 0.75rem 1.5rem; /* px-6 py-3 */
+            font-size: 1rem;
+        }
+
+        .gradient-text {
+            background-image: var(--gradient-text-color);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent; /* Fallback */
+        }
+
+        .animate-blink {
+            animation: blink 1s step-start infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .animate-pulse-slow {
+            animation: pulse-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        /* Hero Section Blob colors based on dark mode */
+        .hero-blob-primary { background-color: rgba(var(--primary-color-rgb), 0.3); }
+        .hero-blob-purple { background-color: rgba(var(--purple-color-rgb), 0.2); }
+        .hero-blob-emerald { background-color: rgba(var(--emerald-color-rgb), 0.1); }
+
+        /* Feature Cards */
+        .feature-card {
+            background-color: var(--feature-card-bg);
+            border: 1px solid var(--feature-card-border);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .feature-card:hover {
+            background-color: var(--card-background);
+            border-color: var(--border-color);
+            transform: translateY(-0.25rem);
+        }
+        .feature-card .lucide {
+            color: var(--primary-color);
+        }
+
+        /* Profile Cards */
+        .profile-card {
+            background-color: var(--feature-card-bg);
+            border: 1px solid var(--feature-card-border);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .profile-card:hover {
+            background-color: var(--card-background);
+            border-color: var(--border-color);
+            transform: translateY(-0.25rem);
+        }
+        .profile-card .icon-wrapper {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 0.75rem;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile-card:hover .icon-wrapper {
+            transform: scale(1.1);
+        }
+        .profile-card .lucide {
+            color: white;
+        }
+        .profile-card .most-popular-tag {
+            position: absolute;
+            top: -0.75rem;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.25rem 0.75rem;
+            background-color: rgba(var(--emerald-color-rgb), 0.8);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            z-index: 1;
+            border: 1px solid rgba(var(--emerald-color-rgb), 0.5);
+            box-shadow: 0 4px 6px -1px rgba(var(--emerald-color-rgb), 0.3);
+        }
+
+        /* How it works timeline */
+        .timeline-container {
+            position: relative;
+        }
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--purple-color));
+        }
+        .timeline-item-circle {
+            position: relative;
+            z-index: 10;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 9999px;
+            background-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(var(--primary-color-rgb), 0.2);
+        }
+
+        /* Pricing Cards */
+        .pricing-card {
+            position: relative;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--pricing-card-bg);
+            border: 1px solid var(--pricing-card-border);
+        }
+        .pricing-card.popular {
+            background: linear-gradient(to bottom, rgba(var(--primary-color-rgb), 0.2), rgba(var(--purple-color-rgb), 0.1));
+            border: 2px solid rgba(var(--primary-color-rgb), 0.5);
+        }
+        .pricing-card .most-popular-badge {
+            position: absolute;
+            top: -0.75rem;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            background-color: rgba(var(--primary-color-rgb), 0.2);
+            color: var(--primary-color);
+            border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+        }
+        .pricing-card ul li .lucide {
+            color: var(--emerald-color);
+        }
+        .pricing-card ul li .lucide.disabled {
+            color: var(--text-tertiary);
+        }
+        .pricing-card ul li .coming-soon-badge {
+            font-size: 0.75rem;
+            padding: 0.125rem 0.375rem;
+            border-radius: 0.25rem;
+            background-color: rgba(var(--amber-color-rgb), 0.2);
+            color: var(--amber-color);
+            border: 1px solid rgba(var(--amber-color-rgb), 0.3);
+            margin-left: 0.5rem;
+        }
+
+        /* Download Section */
+        .download-section {
+            background-image: linear-gradient(to bottom, var(--download-bg-from), var(--download-bg-via), var(--download-bg-to));
+        }
+
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+        }
+        .dark-mode-toggle:hover {
+            color: var(--primary-color);
+        }
+
+        /* Animations for scroll reveal */
+        .animated-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out var(--animation-delay, 0s), transform 0.8s ease-out var(--animation-delay, 0s);
+        }
+        .animated-item.animated-x {
+            transform: translateX(-20px);
+        }
+        .animated-item.animated-x-reverse {
+            transform: translateX(20px);
+        }
+        .animated-item.is-visible {
+            opacity: 1;
+            transform: translateY(0) translateX(0);
+        }
+
+        /* Sticky Section Animations (simplified) */
+        .sticky-section-visual {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transform-style: preserve-3d;
+        }
+        .sticky-section-visual.active {
+            opacity: 1;
+            transform: translateX(0px) scale(1) rotate(0deg);
+        }
+        .sticky-section-visual.inactive-left {
+            opacity: 0;
+            transform: translateX(-30px) scale(0.7) rotate(-5deg);
+        }
+        .sticky-section-visual.inactive-right {
+            opacity: 0;
+            transform: translateX(30px) scale(0.7) rotate(5deg);
+        }
+        .sticky-section-visual .image-card {
+            position: relative;
+            width: 100%;
+            max-width: 48rem;
+        }
+        .sticky-section-visual .image-card-label {
+            position: absolute;
+            bottom: -3.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.625rem 1.25rem;
+            border-radius: 9999px;
+            backdrop-filter: blur(4px);
+            color: white;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 1;
+            transition: opacity 0.8s ease-out;
+        }
+        .sticky-section-visual.inactive-right .image-card-label {
+            opacity: 0;
+        }
+
+        /* Media Queries */
+        @media (min-width: 640px) { /* sm */
+            .sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+            .sm\:text-xl { font-size: 1.25rem; }
+            .sm\:text-4xl { font-size: 2.25rem; }
+            .sm\:text-5xl { font-size: 3rem; }
+            .sm\:flex-row { flex-direction: row; }
+        }
+
+        @media (min-width: 768px) { /* md */
+            .md\:flex { display: flex; }
+            .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .md\:flex-row { flex-direction: row; }
+            .md\:justify-between { justify-content: space-between; }
+            .md\:items-center { align-items: center; }
+        }
+
+        @media (min-width: 1024px) { /* lg */
+            .lg\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+            .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+            .lg\:text-left { text-align: left; }
+            .lg\:text-right { text-align: right; }
+            .lg\:text-2xl { font-size: 1.5rem; }
+            .lg\:text-7xl { font-size: 4.5rem; }
+            .lg\:flex-row { flex-direction: row; }
+            .lg\:flex-row-reverse { flex-direction: row-reverse; }
+            .lg\:block { display: block; }
+            .lg\:space-y-24 > :not([hidden]) ~ :not([hidden]) { margin-top: 6rem; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent header">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <a href="#" class="flex items-center gap-2">
+                        <img alt="Wispr" width="32" height="32" src="logo.png"/>
+                        <span class="text-lg font-semibold text-primary">Wispr</span>
+                    </a>
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a href="#features" class="text-sm nav-link">Features</a>
+                        <a href="#profiles" class="text-sm nav-link">Use Cases</a>
+                        <a href="#how-it-works" class="text-sm nav-link">How It Works</a>
+                        <a href="#pricing" class="text-sm nav-link">Pricing</a>
+                    </nav>
+                    <div class="flex items-center gap-4">
+                        <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon">
+                                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+                            </svg>
+                        </button>
+                        <a href="#download">
+                            <button class="btn-primary px-4 py-2 text-sm">Download</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="relative overflow-hidden pt-32 pb-4">
+            <div class="absolute inset-0 bg-gradient-to-b from-primary-950 via-slate-950 to-slate-950"></div>
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 hero-blob-primary rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 hero-blob-purple rounded-full blur-3xl animate-pulse-slow" style="animation-delay:1s"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] hero-blob-emerald rounded-full blur-3xl"></div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <div class="animated-item" style="animation-delay:0s">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-500/20 text-primary-300 border border-primary-500/30 mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up w-3 h-3 mr-1" aria-hidden="true">
+                                <path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path>
+                            </svg>Close More Deals, Faster
+                        </span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight mb-6 animated-item" style="animation-delay:0.1s">
+                        Your Secret Weapon for<br/><span id="typedText" class="gradient-text"></span><span class="inline-block w-[3px] h-[0.9em] bg-primary-400 ml-1 align-middle animate-blink"></span>
+                    </h1>
+                    <p class="text-lg sm:text-xl lg:text-2xl text-slate-400 max-w-3xl mx-auto mb-8 text-balance animated-item" style="animation-delay: 0.2s;">
+                        Real-time AI that listens to your prospect and whispers the perfect response. Handle objections, nail your pitch, and
+                        <span class="text-emerald-400 font-semibold">crush your quota</span>.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-8 mb-10 animated-item" style="animation-delay: 0.3s;">
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dollar-sign w-5 h-5 text-emerald-400" aria-hidden="true">
+                                <line x1="12" x2="12" y1="2" y2="22"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                            <span class="hero-feature-text"><span class="hero-feature-text-bold font-bold">40%</span> higher close rates</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-5 h-5 text-primary-400" aria-hidden="true">
+                                <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle>
+                            </svg>
+                            <span class="hero-feature-text"><span class="hero-feature-text-bold font-bold">Real-time</span> objection handling</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up w-5 h-5 text-purple-400" aria-hidden="true">
+                                <path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path>
+                            </svg>
+                            <span class="hero-feature-text"><span class="hero-feature-text-bold font-bold">SPIN, BANT, MEDDIC</span> frameworks</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animated-item" style="animation-delay: 0.4s;">
+                        <a href="#download">
+                            <button class="btn-primary group">Start Closing More Deals
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </button>
+                        </a>
+                        <a href="#how-it-works">
+                            <button class="btn-secondary text-lg">See How It Works</button>
+                        </a>
+                    </div>
+                    <p class="mt-6 text-sm text-slate-500 animated-item" style="animation-delay: 0.5s;">Trusted by top-performing sales reps at startups and enterprises</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative h-[150vh] bg-slate-950">
+            <div class="sticky top-0 h-screen flex items-center justify-center overflow-hidden" style="perspective:1000px">
+                <div class="absolute inset-0 bg-gradient-to-b from-slate-950 to-slate-900"></div>
+                <div class="absolute top-1/4 left-1/4 w-80 h-80 hero-blob-primary rounded-full blur-3xl"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-96 h-96 hero-blob-purple rounded-full blur-3xl"></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 w-[500px] h-[500px] hero-blob-emerald rounded-full blur-3xl"></div>
+                <div class="relative w-full max-w-6xl mx-auto px-4">
+                    <div class="absolute -inset-8 bg-gradient-to-r from-primary-500 via-emerald-500 to-purple-500 rounded-3xl blur-3xl" style="opacity:0.15;"></div>
+                    <div id="stickyVisual1" class="sticky-section-visual active">
+                        <div class="image-card">
+                            <div class="rounded-xl overflow-hidden border border-primary-400/30 shadow-2xl shadow-primary-500/30 bg-slate-900">
+                                <img alt="Wispr - Choose your sales mode" src="app-light.png"/>
+                            </div>
+                            <div class="image-card-label" style="box-shadow: var(--shadow-primary-500-30); background-color: rgba(var(--primary-color-rgb), 0.9);">Step 1: Choose Your Mode</div>
+                        </div>
+                    </div>
+                    <div id="stickyVisual2" class="sticky-section-visual inactive-right">
+                        <div class="image-card">
+                            <div class="rounded-xl overflow-hidden border border-emerald-400/30 shadow-2xl shadow-emerald-500/30 bg-slate-900">
+                                <img alt="Wispr - Real-time AI assistance during sales call" src="app-session.png"/>
+                            </div>
+                            <div class="image-card-label" style="box-shadow: var(--shadow-emerald-500-30); background-color: rgba(var(--emerald-color-rgb), 0.9);">Step 2: Get Real-Time Help</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-24 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4 animated-item" style="animation-delay:0s">Built for <span class="gradient-text">Top Performers</span></h2>
+                    <p class="text-lg text-slate-400 max-w-2xl mx-auto animated-item" style="animation-delay: 0.1s;">Every feature designed to help you close more deals and crush your quota.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="animated-item" style="animation-delay: 0.2s;">
+                        <div class="feature-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mic w-10 h-10 mb-4" aria-hidden="true"><path d="M12 19v3"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><rect x="9" y="2" width="6" height="13" rx="3"></rect></svg>
+                            <h3 class="text-lg font-semibold mb-2">Hear Every Objection</h3>
+                            <p class="text-slate-400 text-sm">Real-time audio analysis catches prospect concerns the moment they speak. Never miss a buying signal again.</p>
+                        </div>
+                    </div>
+                    <div class="animated-item" style="animation-delay: 0.3s;">
+                        <div class="feature-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor w-10 h-10 mb-4" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg>
+                            <h3 class="text-lg font-semibold mb-2">See Their Screen</h3>
+                            <p class="text-slate-400 text-sm">Analyzes shared presentations and proposals. Know exactly what your prospect is looking at and respond accordingly.</p>
+                        </div>
+                    </div>
+                    <div class="animated-item" style="animation-delay: 0.4s;">
+                        <div class="feature-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap w-10 h-10 mb-4" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
+                            <h3 class="text-lg font-semibold mb-2">Instant Comebacks</h3>
+                            <p class="text-slate-400 text-sm">Get the perfect response in milliseconds. Teleprompter-style display so you never stumble on a tough question.</p>
+                        </div>
+                    </div>
+                    <div class="animated-item" style="animation-delay: 0.5s;">
+                        <div class="feature-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb w-10 h-10 mb-4" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg>
+                            <h3 class="text-lg font-semibold mb-2">Smart Insight Chips</h3>
+                            <p class="text-slate-400 text-sm">AI-powered chips appear after each response—next steps, warnings, opportunities, and tips to keep you sharp.</p>
+                        </div>
+                    </div>
+                    <div class="animated-item" style="animation-delay: 0.6s;">
+                        <div class="feature-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud w-10 h-10 mb-4" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+                            <h3 class="text-lg font-semibold mb-2">Your Data, Your Choice</h3>
+                            <p class="text-slate-400 text-sm">Choose to sync sessions to the cloud for team access, or keep everything local. You control where your data lives.</p>
+                        </div>
+                    </div>
+                    <div class="animated-item" style="animation-delay: 0.7s;">
+                        <div class="feature-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-10 h-10 mb-4" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                            <h3 class="text-lg font-semibold mb-2">Team Workspaces</h3>
+                            <p class="text-slate-400 text-sm">Share prompts and settings across your team. Admins set defaults, reps personalize. Everyone stays aligned.</p>
+                        </div>
+                    </div>
+                    <div class="animated-item" style="animation-delay: 0.8s;">
+                        <div class="feature-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refresh-cw w-10 h-10 mb-4" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg>
+                            <h3 class="text-lg font-semibold mb-2">Multi-Provider Fallback</h3>
+                            <p class="text-slate-400 text-sm">Configure both Gemini and OpenAI. If one fails, the other kicks in automatically. Never miss a beat.</p>
+                        </div>
+                    </div>
+                    <div class="animated-item" style="animation-delay: 0.9s;">
+                        <div class="feature-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield w-10 h-10 mb-4" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
+                            <h3 class="text-lg font-semibold mb-2">Privacy First</h3>
+                            <p class="text-slate-400 text-sm">API keys encrypted locally. Sessions sent only to your chosen AI provider. No middleman servers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="profiles" class="py-24 relative bg-slate-900/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4 animated-item" style="animation-delay:0s">Modes for Every <span class="gradient-text">Sales Scenario</span></h2>
+                    <p class="text-lg text-slate-400 max-w-2xl mx-auto animated-item" style="animation-delay: 0.1s;">From cold calls to contract negotiations. Each mode is tuned with proven sales frameworks and battle-tested tactics.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="animated-item" style="animation-delay: 0.2s;">
+                        <div class="profile-card ring-2 ring-emerald-500/50">
+                            <div class="most-popular-tag" style="background-color: var(--emerald-color); border-color: rgba(var(--emerald-color-rgb), 0.5);">Most Popular</div>
+                            <div class="icon-wrapper bg-gradient-to-r from-emerald-500 to-green-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dollar-sign w-full h-full text-white" aria-hidden="true"><line x1="12" x2="12" y1="2" y2="22"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Sales Call</h3>
+                            <p class="text-slate-400">Close more deals with SPIN, BANT, MEDDIC, and Challenger frameworks. Real-time objection handling and deal guidance.</p>
+                        </div>
+                    </div>
+                    <div class="animated-item" style="animation-delay: 0.3s;">
+                        <div class="profile-card">
+                            <div class="icon-wrapper bg-gradient-to-r from-red-500 to-rose-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake w-full h-full text-white" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"></path><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"></path><path d="m21 3 1 11h-2"></path><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"></path><path d="M3 4h8"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Negotiation</h3>
+                            <p class="text-slate-400">Win negotiations with Harvard Principled tactics. Know your BATNA, anchor effectively, and find shared interests.</p>
+                        </div>
+                    </div>
+                    <div class="animated-item" style="animation-delay: 0.4s;">
+                        <div class="profile-card">
+                            <div class="icon-wrapper bg-gradient-to-r from-orange-500 to-amber-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-presentation w-full h-full text-white" aria-hidden="true"><path d="M2 3h20"></path><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"></path><path d="m7 21 5-5 5 5"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Sales Demo</h3>
+                            <p class="text-slate-400">Deliver compelling product demos. Handle tough questions confidently and guide prospects to next steps.</p>
+                        </div>
+                    </div>
+                    <div class="animated-item" style="animation-delay: 0.5s;">
+                        <div class="profile-card">
+                            <div class="icon-wrapper bg-gradient-to-r from-purple-500 to-pink-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-full h-full text-white" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Discovery Call</h3>
+                            <p class="text-slate-400">Lead productive discovery calls. Uncover pain points, qualify leads, and build rapport with prospects.</p>
+                        </div>
+                    </div>
+                    <div class="animated-item" style="animation-delay: 0.6s;">
+                        <div class="profile-card">
+                            <div class="icon-wrapper bg-gradient-to-r from-blue-500 to-cyan-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase w-full h-full text-white" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Interview</h3>
+                            <p class="text-slate-400">Ace job interviews with STAR-method responses and confident answers. Also great for hiring sales talent.</p>
+                        </div>
+                    </div>
+                    <div class="animated-item" style="animation-delay: 0.7s;">
+                        <div class="profile-card">
+                            <div class="icon-wrapper bg-gradient-to-r from-indigo-500 to-violet-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap w-full h-full text-white" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Training</h3>
+                            <p class="text-slate-400">Onboard new sales reps faster. Practice pitches and objection handling with real-time coaching.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="py-24 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4 animated-item" style="animation-delay:0s">Up and Running in <span class="gradient-text">5 Minutes</span></h2>
+                    <p class="text-lg text-slate-400 max-w-2xl mx-auto animated-item" style="animation-delay: 0.1s;">Quick setup. Free 7-day trial. Bring your own API key and start closing.</p>
+                </div>
+                <div class="relative timeline-container">
+                    <div class="timeline-line hidden lg:block"></div>
+                    <div class="space-y-12 lg:space-y-24">
+                        <div class="flex flex-col lg:flex-row items-center gap-8 timeline-item animated-item animated-x" style="animation-delay: 0.2s;">
+                            <div class="flex-1 lg:text-right">
+                                <div class="inline-block">
+                                    <span class="text-6xl font-bold text-white/10">01</span>
+                                    <h3 class="text-2xl font-semibold mb-2 -mt-4">Download &amp; Install</h3>
+                                    <p class="text-slate-400 max-w-md">Get Wispr for Windows (Mac &amp; Linux coming soon). Install takes less than a minute.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item-circle hidden lg:block"></div>
+                            <div class="flex-1"></div>
+                        </div>
+                        <div class="flex flex-col lg:flex-row items-center gap-8 lg:flex-row-reverse timeline-item animated-item animated-x-reverse" style="animation-delay: 0.3s;">
+                            <div class="flex-1 lg:text-left">
+                                <div class="inline-block">
+                                    <span class="text-6xl font-bold text-white/10">02</span>
+                                    <h3 class="text-2xl font-semibold mb-2 -mt-4">Create Your Account</h3>
+                                    <p class="text-slate-400 max-w-md">Sign up with email or Google. Create a workspace for yourself or your team.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item-circle hidden lg:block"></div>
+                            <div class="flex-1"></div>
+                        </div>
+                        <div class="flex flex-col lg:flex-row items-center gap-8 timeline-item animated-item animated-x" style="animation-delay: 0.4s;">
+                            <div class="flex-1 lg:text-right">
+                                <div class="inline-block">
+                                    <span class="text-6xl font-bold text-white/10">03</span>
+                                    <h3 class="text-2xl font-semibold mb-2 -mt-4">Add Your API Key</h3>
+                                    <p class="text-slate-400 max-w-md">Connect your Gemini or OpenAI API key. Your key is encrypted and stored locally.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item-circle hidden lg:block"></div>
+                            <div class="flex-1"></div>
+                        </div>
+                        <div class="flex flex-col lg:flex-row items-center gap-8 lg:flex-row-reverse timeline-item animated-item animated-x-reverse" style="animation-delay: 0.5s;">
+                            <div class="flex-1 lg:text-left">
+                                <div class="inline-block">
+                                    <span class="text-6xl font-bold text-white/10">04</span>
+                                    <h3 class="text-2xl font-semibold mb-2 -mt-4">Choose Your Profile</h3>
+                                    <p class="text-slate-400 max-w-md">Select from Interview, Sales, Meeting, Presentation, Negotiation, or Exam profiles.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item-circle hidden lg:block"></div>
+                            <div class="flex-1"></div>
+                        </div>
+                        <div class="flex flex-col lg:flex-row items-center gap-8 timeline-item animated-item animated-x" style="animation-delay: 0.6s;">
+                            <div class="flex-1 lg:text-right">
+                                <div class="inline-block">
+                                    <span class="text-6xl font-bold text-white/10">05</span>
+                                    <h3 class="text-2xl font-semibold mb-2 -mt-4">Start Your Call</h3>
+                                    <p class="text-slate-400 max-w-md">Press the shortcut to activate. Wispr listens, watches, and provides real-time suggestions.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item-circle hidden lg:block"></div>
+                            <div class="flex-1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="py-24 relative">
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-primary-950/30 to-slate-950"></div>
+            <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4 animated-item" style="animation-delay:0s">Simple, <span class="gradient-text">Transparent Pricing</span></h2>
+                    <p class="text-lg text-slate-400 max-w-2xl mx-auto animated-item" style="animation-delay: 0.1s;">Start free. Upgrade when you're ready.</p>
+                </div>
+                <div class="flex justify-center mb-12 animated-item" style="animation-delay: 0.2s;">
+                    <div class="inline-flex rounded-xl bg-white/5 border border-white/10 p-1">
+                        <button class="flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-medium transition-all bg-primary-500 text-white shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-4 h-4" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>For Individuals
+                        </button>
+                        <button class="flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-medium transition-all text-slate-400 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-4 h-4" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>For Teams
+                        </button>
+                    </div>
+                </div>
+                <div class="grid gap-6 grid-cols-1 md:grid-cols-3">
+                    <div class="animated-item" style="animation-delay: 0.3s;">
+                        <div class="pricing-card">
+                            <div class="mb-6">
+                                <h3 class="text-xl font-bold mb-1">Free</h3>
+                                <p class="text-slate-400 text-sm">10 calls per month</p>
+                            </div>
+                            <div class="mb-6">
+                                <div class="flex items-baseline"><span class="text-4xl font-bold">$0</span><span class="text-slate-400 ml-2">/month</span></div>
+                            </div>
+                            <ul class="space-y-3 mb-8 flex-grow">
+                                <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span class="text-sm text-slate-300">All 6 profiles (sales, interview, etc.)</span></li>
+                                <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span class="text-sm text-slate-300">SPIN, BANT, MEDDIC frameworks</span></li>
+                                <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span class="text-sm text-slate-300">Real-time insight chips</span></li>
+                                <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span class="text-sm text-slate-300">DiSC personality adaptation</span></li>
+                                <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span class="text-sm text-slate-300">7-day call history</span></li>
+                            </ul>
+                            <a href="#download" class="block"><button class="btn-secondary text-base w-full group">Start Free<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button></a>
+                        </div>
+                    </div>
+                    <div class="animated-item" style="animation-delay: 0.4s;">
+                        <div class="pricing-card">
+                            <div class="mb-6">
+                                <h3 class="text-xl font-bold mb-1">Individual</h3>
+                                <p class="text-slate-400 text-sm">Unlimited calls</p>
+                            </div>
+                            <div class="mb-6">
+                                <div class="flex items-baseline"><span class="text-4xl font-bold">$22</span><span class="text-slate-400 ml-2">/mo</span></div>
+                                <p class="text-sm text-slate-500 mt-1">or $29/mo billed monthly</p>
+                                <p class="text-xs text-slate-500 mt-1">$264/year billed annually</p>
+                            </div>
+                            <ul class="space-y-3 mb-8 flex-grow">
+                                <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span class="text-sm text-slate-300">Everything in Free</span></li>
+                                <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span class="text-sm text-slate-300">Unlimited calls</span></li>
+                                <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span class="text-sm text-slate-300">90-day call history</span></li>
+                                <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span class="text-sm text-slate-300">Export transcripts</span></li>
+                                <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span class="text-sm text-slate-300">Session history sync</span></li>
+                            </ul>
+                            <a href="#download" class="block"><button class="btn-secondary text-base w-full group"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download w-4 h-4 mr-2" aria-hidden="true"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg>Get Started<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button></a>
+                        </div>
+                    </div>
+                    <div class="animated-item" style="animation-delay: 0.5s;">
+                        <div class="pricing-card popular">
+                            <div class="most-popular-badge">Most Popular</div>
+                            <div class="mb-6">
+                                <h3 class="text-xl font-bold mb-1">Individual Pro</h3>
+                                <p class="text-slate-400 text-sm">AI-powered coaching</p>
+                            </div>
+                            <div class="mb-6">
+                                <div class="flex items-baseline"><span class="text-4xl font-bold">$44</span><span class="text-slate-400 ml-2">/mo</span></div>
+                                <p class="text-sm text-slate-500 mt-1">or $59/mo billed monthly</p>
+                                <p class="text-xs text-slate-500 mt-1">$528/year billed annually</p>
+                            </div>
+                            <ul class="space-y-3 mb-8 flex-grow">
+                                <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span class="text-sm text-slate-300">Everything in Individual</span></li>
+                                <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span class="text-sm text-slate-300">AI call grading</span></li>
+                                <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 flex-shrink-0 mt-0.5 disabled" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span class="text-sm text-slate-500">Self-improvement loop<span class="coming-soon-badge">Coming Soon</span></span></li>
+                                <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 flex-shrink-0 mt-0.5 disabled" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span class="text-sm text-slate-500">Personal analytics<span class="coming-soon-badge">Coming Soon</span></span></li>
+                                <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span class="text-sm text-slate-300">Unlimited call history</span></li>
+                            </ul>
+                            <a href="#download" class="block"><button class="btn-primary text-base w-full group shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-4 h-4 mr-2" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>Start Closing More<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button></a>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center text-sm text-slate-500 mt-12 animated-item" style="animation-delay: 0.6s;">All plans include your own API key (Gemini or OpenAI). Cancel anytime.</p>
+            </div>
+        </section>
+
+        <section id="download" class="py-24 relative download-section">
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-primary-950/50 to-slate-950"></div>
+            <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="animated-item" style="animation-delay:0s">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 mb-6">Version 0.5.64</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4">Start <span class="gradient-text">Crushing Your Quota</span> Today</h2>
+                    <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">Join top sales reps who close 40% more deals with AI-powered assistance. Free to try—bring your own API key.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animated-item" style="animation-delay: 0.1s;">
+                    <a href="https://github.com/hmseeb/leadrwispr-releases/releases/download/v0.5.64/LeadrWispr-0.5.64.Setup.exe" download="">
+                        <button class="btn-primary text-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor w-5 h-5 mr-2" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg>Download for Windows
+                        </button>
+                    </a>
+                    <button class="btn-secondary text-lg" disabled="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-apple w-5 h-5 mr-2" aria-hidden="true"><path d="M12 6.528V3a1 1 0 0 1 1-1h0"></path><path d="M18.237 21A15 15 0 0 0 22 11a6 6 0 0 0-10-4.472A6 6 0 0 0 2 11a15.1 15.1 0 0 0 3.763 10 3 3 0 0 0 3.648.648 5.5 5.5 0 0 1 5.178 0A3 3 0 0 0 18.237 21"></path></svg>macOS Coming Soon
+                    </button>
+                </div>
+                <p class="mt-8 text-sm text-slate-500 animated-item" style="animation-delay: 0.2s;">Requires Windows 10 or later • Gemini or OpenAI API key</p>
+            </div>
+        </section>
+
+        <footer class="border-t border-white/10 py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div class="flex items-center gap-3">
+                        <img alt="Wispr" width="40" height="40" src="logo.png"/>
+                        <div>
+                            <span class="font-semibold text-primary">Wispr</span>
+                            <p class="text-sm text-slate-500">Your AI copilot for sales calls</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-8 text-sm text-slate-400">
+                        <a href="#features" class="hover:text-white transition-colors">Features</a>
+                        <a href="#profiles" class="hover:text-white transition-colors">Profiles</a>
+                        <a href="#download" class="hover:text-white transition-colors">Download</a>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="https://base.leadrai.com/public/wispr" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bug w-5 h-5" aria-hidden="true"><path d="M12 20v-9"></path><path d="M14 7a4 4 0 0 1 4 4v3a6 6 0 0 1-12 0v-3a4 4 0 0 1 4-4z"></path><path d="M14.12 3.88 16 2"></path><path d="M21 21a4 4 0 0 0-3.81-4"></path><path d="M21 5a4 4 0 0 1-3.55 3.97"></path><path d="M22 13h-4"></path><path d="M3 21a4 4 0 0 1 3.81-4"></path><path d="M3 5a4 4 0 0 0 3.55 3.97"></path><path d="M6 13H2"></path><path d="m8 2 1.88 1.88"></path><path d="M9 7.13V6a3 3 0 1 1 6 0v1.13"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/5 text-center text-sm text-slate-500">© 2026 Wispr. All rights reserved.</div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const htmlElement = document.documentElement;
+
+        function applyTheme(theme) {
+            htmlElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            const icon = darkModeToggle.querySelector('svg');
+            if (theme === 'dark') {
+                icon.innerHTML = '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>'; // Moon icon
+            } else {
+                icon.innerHTML = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M4.93 19.07l1.41-1.41"/><path d="M17.66 6.34l1.41-1.41"/>'; // Sun icon
+            }
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            applyTheme(savedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            applyTheme('dark');
+        } else {
+            applyTheme('light');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+        });
+
+        // Hero Typing Effect
+        const typedTextSpan = document.getElementById('typedText');
+        const phrases = ["Sales Calls", "Interviews", "Presentations", "Negotiations"];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100; // milliseconds
+        const deletingSpeed = 60; // milliseconds
+        const delayBeforeDelete = 1500; // milliseconds
+        const delayBetweenPhrases = 500; // milliseconds
+
+        function type() {
+            if (!typedTextSpan) return; // Exit if element doesn't exist
+
+            const currentPhrase = phrases[phraseIndex];
+            if (isDeleting) {
+                typedTextSpan.textContent = currentPhrase.substring(0, charIndex--);
+            } else {
+                typedTextSpan.textContent = currentPhrase.substring(0, charIndex++);
+            }
+
+            let typeDelay = typingSpeed;
+            if (isDeleting) {
+                typeDelay = deletingSpeed;
+            }
+
+            if (!isDeleting && charIndex === currentPhrase.length + 1) {
+                typeDelay = delayBeforeDelete;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === -1) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeDelay = delayBetweenPhrases;
+            }
+
+            setTimeout(type, typeDelay);
+        }
+        document.addEventListener('DOMContentLoaded', type);
+
+
+        // Header Scroll Effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Scroll Reveal Animations
+        const animatedItems = document.querySelectorAll('.animated-item');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Play animation once
+                }
+            });
+        };
+
+        const animationObserver = new IntersectionObserver(observerCallback, observerOptions);
+        animatedItems.forEach(item => {
+            // Read animation-delay from inline style and set as custom property
+            const delay = item.style.animationDelay || '0s';
+            item.style.setProperty('--animation-delay', delay);
+            animationObserver.observe(item);
+        });
+
+        // Sticky Section Image Scroll Transition
+        const stickyParentSection = document.querySelector('.h-\[150vh\]');
+        const stickyContentWrapper = stickyParentSection.querySelector('.sticky');
+        const visual1 = document.getElementById('stickyVisual1');
+        const visual2 = document.getElementById('stickyVisual2');
+
+        if (stickyParentSection && visual1 && visual2) {
+            window.addEventListener('scroll', () => {
+                const rect = stickyParentSection.getBoundingClientRect();
+                // Calculate scroll progress relative to the parent section
+                // When rect.top is 0, stickyContentWrapper is at the top of the viewport
+                // The animation spans from when rect.top is 0 to rect.height - window.innerHeight
+                // We want the transition to occur as the scroll progresses while the sticky element is in view.
+                
+                // Simplified progress: when sticky element is at top (0) to when it's about to unstick (parent bottom reaches viewport)
+                const scrollStart = stickyParentSection.offsetTop;
+                const scrollEnd = stickyParentSection.offsetTop + stickyParentSection.offsetHeight - window.innerHeight;
+                const currentScroll = window.scrollY;
+
+                // Adjust to be 0-1 range across the "active" scroll zone for the sticky content
+                // The sticky content is visible for 150vh parent - 100vh viewport = 50vh scroll
+                const progressZoneHeight = stickyParentSection.offsetHeight - window.innerHeight;
+                const progress = Math.max(0, Math.min(1, (currentScroll - scrollStart) / progressZoneHeight));
+
+                if (progress < 0.5) { // First half of scroll, show visual1
+                    visual1.classList.add('active');
+                    visual1.classList.remove('inactive-left', 'inactive-right');
+                    visual2.classList.add('inactive-right');
+                    visual2.classList.remove('active', 'inactive-left');
+                } else { // Second half of scroll, show visual2
+                    visual1.classList.add('inactive-left');
+                    visual1.classList.remove('active', 'inactive-right');
+                    visual2.classList.add('active');
+                    visual2.classList.remove('inactive-left', 'inactive-right');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+```
